@@ -1000,15 +1000,15 @@
                 </div>
                 <div class="loading-music">🎵</div>
             </div>
-            <div class="loading-text">Loading playlist...</div>
-            <div class="loading-subtitle">Preparing something crazy!!</div>
+            <div class="loading-text">Loading music playlist...</div>
+            <div class="loading-subtitle">Preparing something crazy</div>
         </div>
     </div>
     <!-- HERO SECTION -->
     <div class="hero-section">
         <div class="hero-content">
             <div class="album-cover-container">
-                <div class="album-cover" style="background-image: url('Screenshot 2026-01-12 020944.png'); background-size: cover; background-position: center;"></div>
+                <div class="album-cover" style="background-image: url('Screenshot 2026-01-12 020944 - Copy.png'); background-size: cover; background-position: center;"></div>
             </div>
             <div class="playlist-badge">Playlist</div>
             <h1 class="hero-title">Unreleased Playlist: Pulihora Kalapadam Ela?</h1>
@@ -1053,7 +1053,7 @@
         <div class="blend-section">
             <div class="blend-card">
                 <div class="blend-content">
-                    <h3 class="blend-title">Spotify Blend</h3>
+                    <h3 class="blend-title">Our Musical Blend</h3>
                     <button class="blend-button" onclick="openBlend()">
                         <span class="blend-text">Click here for blend</span>
                         <span class="blend-arrow">→</span>
@@ -1207,15 +1207,38 @@
         let reactions = JSON.parse(localStorage.getItem('playlistReactions')) || {};
 
         // ===== PHOTO GALLERY DATA =====
-        const galleryPhotos = [
+        const basePhotos = [
             { src: 'Screenshot 2026-01-12 020640.png', caption: '1' },
             { src: 'Screenshot 2026-01-12 020838.png', caption: '2' },
             { src: 'Screenshot 2026-01-12 020909.png', caption: '3' },
             { src: 'Screenshot 2026-01-12 020944 - Copy.png', caption: '4' },
-            { src: 'Screenshot 2026-01-12 020944.png', caption: '5' },
-            { src: 'Screenshot 2026-01-12 023440.png', caption: '6' },
-            { src: 'Screenshot 2026-03-06 180014.png', caption: '7' }
+            { src: 'Screenshot 2026-01-12 023440.png', caption: '5' },
+            { src: 'Screenshot 2026-03-06 180014.png', caption: '6' }
         ];
+
+        const rImages = [
+            { src: 'r1.jpeg', caption: 'r1' },
+            { src: 'r2.jpeg', caption: 'r2' },
+            { src: 'r3.jpeg', caption: 'r3' },
+            { src: 'r4.jpeg', caption: 'r4' },
+            { src: 'r5.jpeg', caption: 'r5' },
+            { src: 'r6.jpeg', caption: 'r6' },
+            { src: 'r7.jpeg', caption: 'r7' }
+        ];
+
+        // Shuffle function
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        // Combine and shuffle all photos, with r1 always first
+        const shuffledPhotos = shuffleArray([...basePhotos, ...rImages.slice(1)]);
+        const galleryPhotos = [rImages[0], ...shuffledPhotos];
 
         // ===== FLOATING PARTICLES =====
         function createParticles() {
