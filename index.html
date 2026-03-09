@@ -549,6 +549,261 @@
             font-weight: 300;
         }
 
+        /* ===== INSTAGRAM POST SECTION ===== */
+        .instagram-post-section {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .instagram-post-container {
+            display: flex;
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 20px;
+            align-items: flex-start;
+        }
+
+        .post-image-wrapper {
+            flex: 0 0 50%;
+            position: relative;
+            min-width: 0;
+        }
+
+        .carousel-images {
+            position: relative;
+            width: 100%;
+            max-height: 600px;
+            aspect-ratio: 3/4;
+            border-radius: 16px;
+            overflow: hidden;
+            background: #1a1a1a;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+
+        .carousel-image.active {
+            opacity: 1;
+        }
+
+        .carousel-nav-next {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.7);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-nav-next:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-dots {
+            display: flex;
+            gap: 6px;
+            justify-content: center;
+            margin-top: 12px;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .dot.active {
+            background: rgba(255, 255, 255, 0.9);
+            width: 30px;
+            border-radius: 4px;
+        }
+
+        .post-content {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            backdrop-filter: blur(10px);
+        }
+
+        .post-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .post-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+        }
+
+        .post-author {
+            flex: 1;
+        }
+
+        .post-author-name {
+            font-weight: 600;
+            color: #ffffff;
+            font-size: 0.95rem;
+        }
+
+        .post-author-handle {
+            font-size: 0.85rem;
+            color: #b3b3b3;
+        }
+
+        .post-more-btn {
+            background: transparent;
+            border: none;
+            color: #b3b3b3;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s ease;
+        }
+
+        .post-more-btn:hover {
+            color: #ffffff;
+        }
+
+        .post-caption {
+            color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .post-caption-highlight {
+            font-size: 0.85rem;
+            color: #b3b3b3;
+            font-style: italic;
+        }
+
+        .post-interactions {
+            display: flex;
+            gap: 15px;
+            margin: 20px 0;
+            padding: 20px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .post-action-btn {
+            background: transparent;
+            border: none;
+            color: #b3b3b3;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .post-action-btn:hover {
+            color: #1db954;
+            transform: scale(1.2);
+        }
+
+        .post-action-btn.like:hover {
+            color: #e74c3c;
+        }
+
+        .post-likes {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .post-comments {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            max-height: 250px;
+            overflow-y: auto;
+            margin-bottom: 15px;
+        }
+
+        .comment {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .comment-author {
+            font-weight: 600;
+            color: #ffffff;
+            margin-right: 6px;
+        }
+
+        .comment-text {
+            color: #b3b3b3;
+            display: inline;
+        }
+
+        .comment-time {
+            display: block;
+            color: #666666;
+            font-size: 0.8rem;
+            margin-top: 4px;
+        }
+
+        .comment-actions {
+            display: flex;
+            gap: 15px;
+            font-size: 0.8rem;
+            color: #b3b3b3;
+        }
+
+        .comment-actions span {
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .comment-actions span:hover {
+            color: #1db954;
+        }
+
         /* ===== PHOTO GALLERY ===== */
         .gallery-section {
             margin-top: 60px;
@@ -1014,7 +1269,7 @@
             <h1 class="hero-title">Unreleased Playlist: Pulihora Kalapadam Ela?</h1>
             <p class="hero-subtitle">Lines that were said casually, remembered carefully.</p>
             <div class="hero-meta">
-                <span>9 songs</span>
+                <span>10 songs</span>
                 <span>•</span>
                 <span>Documented & Preserved ~ ft Shruthi dabba</span>
             </div>
@@ -1038,6 +1293,89 @@
                 <div>Duration</div>
             </div>
             <div id="tracksContainer"></div>
+        </div>
+
+        <!-- INSTAGRAM POST CAROUSEL -->
+        <div class="instagram-post-section">
+            <div class="instagram-post-container">
+                <!-- Image Carousel -->
+                <div class="post-image-wrapper">
+                    <div class="carousel-images">
+                        <img src="post1.png" alt="Post 1" class="carousel-image active" id="carouselImg1">
+                        <img src="post2.png" alt="Post 2" class="carousel-image" id="carouselImg2">
+                        <img src="post3.png" alt="Post 3" class="carousel-image" id="carouselImg3">
+                        <img src="post4.png" alt="Post 4" class="carousel-image" id="carouselImg4">
+                        <button class="carousel-nav-next" onclick="nextPostSlide()">›</button>
+                    </div>
+                    <div class="carousel-dots">
+                        <span class="dot active" onclick="goToPostSlide(0)"></span>
+                        <span class="dot" onclick="goToPostSlide(1)"></span>
+                        <span class="dot" onclick="goToPostSlide(2)"></span>
+                        <span class="dot" onclick="goToPostSlide(3)"></span>
+                    </div>
+                </div>
+
+                <!-- Post Content & Comments -->
+                <div class="post-content">
+                    <!-- Post Header -->
+                    <div class="post-header">
+                        <div class="post-avatar">📸</div>
+                        <div class="post-author">
+                            <div class="post-author-name">devajrajana</div>
+                            <div class="post-author-handle">Follow</div>
+                        </div>
+                        <button class="post-more-btn">⋯</button>
+                    </div>
+
+                    <!-- Post Caption -->
+                    <div class="post-caption">
+                        Life lo unna main pillars andariki... Mom, sisters, and all my favorite people - this is for you.
+                        <div class="post-caption-highlight">Post cheyyadam konchum late ayochu, but technically not late because you women deserve daily celebrations. 💝 ❤️</div>
+                    </div>
+
+                    <!-- Interactions -->
+                    <div class="post-interactions">
+                        <button class="post-action-btn like">♡</button>
+                        <button class="post-action-btn">💬</button>
+                        <button class="post-action-btn">✈️</button>
+                        <button class="post-action-btn" style="margin-left: auto;">🔖</button>
+                    </div>
+
+                    <!-- Likes Count -->
+                    <div class="post-likes">Liked by keerthana_murra and 74 others</div>
+
+                    <!-- Comments -->
+                    <div class="post-comments" id="postComments">
+                        <div class="comment">
+                            <span class="comment-author">not_your_fri3ndd</span>
+                            <span class="comment-text">This is soo sweet!! ❤️</span>
+                            <div class="comment-time">52m</div>
+                            <div class="comment-actions">
+                                <span>1 like</span>
+                                <span>Reply</span>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <span class="comment-author">being_varshaa</span>
+                            <span class="comment-text">That's something sweet i read today 💝</span>
+                            <div class="comment-time">8h</div>
+                            <div class="comment-actions">
+                                <span>1 like</span>
+                                <span>Reply</span>
+                            </div>
+                        </div>
+                        <div class="comment">
+                            <span class="comment-author">subhoooodhh</span>
+                            <span class="comment-text">Awwwww 🎉 🎉 🎉</span>
+                            <div class="comment-time">18h</div>
+                            <div class="comment-actions">
+                                <span>2 likes</span>
+                                <span>Reply</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- PHOTO GALLERY -->
@@ -1197,6 +1535,13 @@
                 lyrics: "rosh- nenu chudadaniki dayyam la unnanu \n devaj-sun ni ala ante dhaniki kopam vastadhi",
                 duration: "1:45",
                 theme: "track-theme-2"
+            },
+            {
+                track: 10,
+                name: "Ante Sundaraniki Song",
+                lyrics: "devaj- Aa post ki nee voice tho voiceover ivvaledu kadaa.. andukenreach ravatledu emo\n\nrosh- Andhuke aa post antha beautiful ga undhi\n\ndevaj- Beautiful ga kanabadithe chaala\ndevaj- Vinabadali kooda kadaa\n\nrosh- Already chala beautiful ga vundhi, Ante sundaraniki song pettav gaa\n\ndevaj- Ante sundaraniki song is ok\nBut antha kanna sundaramga unde ammayi paadithe vinali ani untadi kadaa😁",
+                duration: "2:10",
+                theme: "track-theme-1"
             }
         ];
 
@@ -1489,6 +1834,34 @@
         // ===== INSTAGRAM LINK =====
         function openInstagram() {
             window.open('https://www.instagram.com/roshh._.unplugged?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', '_blank');
+        }
+
+        // ===== INSTAGRAM POST CAROUSEL =====
+        let currentPostSlide = 0;
+
+        function nextPostSlide() {
+            currentPostSlide = (currentPostSlide + 1) % 4;
+            updatePostCarousel();
+        }
+
+        function goToPostSlide(index) {
+            currentPostSlide = index;
+            updatePostCarousel();
+        }
+
+        function updatePostCarousel() {
+            // Hide all images
+            document.querySelectorAll('.carousel-image').forEach(img => {
+                img.classList.remove('active');
+            });
+
+            // Show current image
+            document.getElementById(`carouselImg${currentPostSlide + 1}`).classList.add('active');
+
+            // Update dots
+            document.querySelectorAll('.dot').forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentPostSlide);
+            });
         }
 
         // ===== UTILITY FUNCTIONS =====
