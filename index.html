@@ -1269,7 +1269,7 @@
             <h1 class="hero-title">Unreleased Playlist: Pulihora Kalapadam Ela?</h1>
             <p class="hero-subtitle">Lines that were said casually, remembered carefully.</p>
             <div class="hero-meta">
-                <span>10 songs</span>
+                <span>12 songs</span>
                 <span>•</span>
                 <span>Documented & Preserved ~ ft Shruthi dabba</span>
             </div>
@@ -1338,6 +1338,7 @@
                         <button class="post-action-btn like">♡</button>
                         <button class="post-action-btn">💬</button>
                         <button class="post-action-btn">✈️</button>
+                        <button class="post-action-btn" id="instaMuteBtn" onclick="toggleInstaAudio()" title="Mute / unmute music">🔇</button>
                         <button class="post-action-btn" style="margin-left: auto;">🔖</button>
                     </div>
 
@@ -1542,6 +1543,25 @@
                 lyrics: "devaj- Aa post ki nee voice tho voiceover ivvaledu kadaa.. andukenreach ravatledu emo\n\nrosh- Andhuke aa post antha beautiful ga undhi\n\ndevaj- Beautiful ga kanabadithe chaala\ndevaj- Vinabadali kooda kadaa\n\nrosh- Already chala beautiful ga vundhi, Ante sundaraniki song pettav gaa\n\ndevaj- Ante sundaraniki song is ok\nBut antha kanna sundaramga unde ammayi paadithe vinali ani untadi kadaa😁",
                 duration: "2:10",
                 theme: "track-theme-1"
+            },
+            {
+                track: 11,
+                name: "Sitaramam reference",
+                lyrics: "Nee noru endhuku aagipodho telusa\nEndhukante nuvvu noru aapukunte prapancham aagipodhi\n(Sitaramam movie reference)",
+                duration: "0:20",
+                theme: "track-theme-3",
+                audio: {
+                    src: "Inthandham.mp3",
+                    start: 43,
+                    end: 63
+                }
+            },
+            {
+                track: 12,
+                name: "Teddy Dress",
+                lyrics: "Rosh- Teddy bear is soo cutee because of that dress\n\nDevaj- Inthaka mundhu aa dress nuvvu veskunnappudu evaraina cute ga undhi annara\n\nRosh- Yess\n\nDevaj- Nuvveskunnavu kabatti bagundhi",
+                duration: "0:25",
+                theme: "track-theme-2"
             }
         ];
 
@@ -1712,8 +1732,55 @@
         }
 
         // ===== MODAL FUNCTIONS =====
+        const trackAudio = document.createElement('audio');
+        trackAudio.id = 'trackAudio';
+        trackAudio.preload = 'auto';
+        trackAudio.style.display = 'none';
+        document.body.appendChild(trackAudio);
+
+        let audioEndTime = null;
+
+        // Stop audio when it reaches the specified end time
+        trackAudio.addEventListener('timeupdate', () => {
+            if (audioEndTime !== null && trackAudio.currentTime >= audioEndTime) {
+                trackAudio.pause();
+            }
+        });
+
+        // Instagram post background music
+        const instaAudio = document.createElement('audio');
+        instaAudio.id = 'instaAudio';
+        instaAudio.src = 'amelia_island.mp3';
+        instaAudio.preload = 'auto';
+        instaAudio.loop = true;
+        instaAudio.style.display = 'none';
+        document.body.appendChild(instaAudio);
+
+        let instaAudioPlaying = false;
+
+        function toggleInstaAudio() {
+            const btn = document.getElementById('instaMuteBtn');
+            if (instaAudioPlaying) {
+                instaAudio.pause();
+                instaAudioPlaying = false;
+                btn.textContent = '🔇';
+            } else {
+                instaAudio.play().catch(() => {
+                    // Autoplay may be blocked by browser; still allow manual unmute.
+                });
+                instaAudioPlaying = true;
+                btn.textContent = '🔊';
+            }
+        }
+
+
         function openTrackModal(index) {
             const track = tracks[index];
+
+            // Pause any previous audio before switching
+            if (!trackAudio.paused) {
+                trackAudio.pause();
+            }
 
             // Increment play count
             playCounts[index]++;
@@ -1739,6 +1806,35 @@
             // Show reactions
             renderReactions(index);
 
+            // Play audio snippet if provided
+            if (track.audio && track.audio.src) {
+                audioEndTime = track.audio.end || null;
+                const requestedStart = track.audio.start || 0;
+
+                trackAudio.src = track.audio.src;
+                trackAudio.pause();
+
+                const setStart = () => {
+                    try {
+                        trackAudio.currentTime = requestedStart;
+                    } catch (err) {
+                        // Some browsers require metadata before seeking.
+                    }
+                };
+
+                if (trackAudio.readyState >= 1) {
+                    setStart();
+                } else {
+                    trackAudio.addEventListener('loadedmetadata', setStart, { once: true });
+                }
+
+                trackAudio.play().catch(() => {
+                    // Autoplay may be blocked; user can still click to play.
+                });
+            } else {
+                audioEndTime = null;
+            }
+
             currentPlaying = index;
             document.getElementById(`track-${index}`).classList.add('active');
             document.getElementById('trackModal').classList.add('show');
@@ -1749,6 +1845,12 @@
             document.getElementById('trackModal').className = 'modal';
             document.querySelectorAll('.track-item').forEach(el => el.classList.remove('active'));
             currentPlaying = null;
+
+            // Stop audio playback when closing the modal
+            if (!trackAudio.paused) {
+                trackAudio.pause();
+            }
+            audioEndTime = null;
         }
 
         // ===== FAVORITES =====
