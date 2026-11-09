@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bonus Tracks | Unreleased Playlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <aside class="spotify-sidebar">
+  <a class="brand-mark" href="index.html"><span class="brand-disc">◉</span><span>UNRELEASED</span></a>
+  <nav class="sidebar-nav" aria-label="Main navigation">
+    <a class="sidebar-link" href="index.html"><span>⌂</span>Home</a>
+    <a class="sidebar-link" href="pages/movies.html"><span>▣</span>Movies & Series</a>
+    <a class="sidebar-link" href="pages/gallery.html"><span>▧</span>Gallery</a>
+    <a class="sidebar-link active" href="bonus.html"><span>♫</span>Bonus Tracks</a>
+  </nav><div class="sidebar-bottom"><span class="sidebar-dot"></span> A collection in progress</div></aside>
+    <div class="particles-container" id="particlesContainer"></div>
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-content">
+            <div class="loading-animation">
+                <div class="music-wave"><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div></div>
+                <div class="loading-music">🎵</div>
+            </div>
+            <div class="loading-text">Loading bonus tracks...</div>
+            <div class="loading-subtitle">The extras stayed in the archive</div>
+        </div>
+    </div>
+    <main class="page-shell bonus-page">
+        <div class="playlist-badge">Bonus Tracks</div>
+        <h1 class="page-title">The Vault</h1>
+        <p class="bonus-intro">The original 12 tracks, tucked away but still here.</p>
+        <div class="playlist-controls">
+            <button class="play-btn-large" onclick="playPlaylist()" aria-label="Play first bonus track">▶</button>
+        </div>
+        <div class="tracks-section">
+            <div class="tracks-header">
+                <div>#</div><div>Track Name</div><div>Preview</div><div>Duration</div>
+            </div>
+            <div id="tracksContainer"></div>
+        </div>
+    </main>
+    <div class="modal" id="trackModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeTrackModal()">✕</button>
+            <div class="modal-header"><div class="modal-track-num" id="modalTrackNum"></div></div>
+            <h2 class="modal-title" id="modalTitle"></h2>
+            <div class="lyrics-section">
+                <div class="section-title">🎧 Now Playing</div>
+                <div class="lyrics-text chat-bubbles" id="modalLyrics"></div>
+            </div>
+            <div class="interaction-section">
+                <div class="interaction-header"><span class="interaction-title">💫 Interact with this memory</span></div>
+                <div class="interaction-buttons">
+                    <button class="favorite-btn" id="modalFavoriteBtn" onclick="toggleFavorite()"><span class="heart-icon">♡</span><span class="favorite-text">Favorite</span></button>
+                    <button class="emoji-btn" onclick="toggleEmojiPicker()"><span class="emoji-icon">😊</span><span class="emoji-text">React</span></button>
+                </div>
+                <div class="emoji-picker" id="emojiPicker" style="display:none;">
+                    <div class="emoji-grid">
+                        <span onclick="addReaction('❤️')">❤️</span><span onclick="addReaction('😂')">😂</span><span onclick="addReaction('😍')">😍</span><span onclick="addReaction('😢')">😢</span>
+                        <span onclick="addReaction('😮')">😮</span><span onclick="addReaction('🔥')">🔥</span><span onclick="addReaction('👏')">👏</span><span onclick="addReaction('💯')">💯</span>
+                    </div>
+                </div>
+                <div class="reactions-display" id="reactionsDisplay"></div>
+            </div>
+        </div>
+    </div>
+    <footer><p>All tracks documented without remixing or autotune</p></footer>
+    <script src="js/script.js"></script>
+</body>
+</html>

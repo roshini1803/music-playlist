@@ -130,21 +130,26 @@ function shuffleArray(array) {
 const shuffledPhotos = shuffleArray([...basePhotos, ...rImages.slice(1)]);
 const galleryPhotos = [rImages[0], ...shuffledPhotos];
 
-// ===== FLOATING PARTICLES =====
+// ===== FLOATING MUSIC NOTES (HOME HERO) =====
 function createParticles() {
     const container = document.getElementById('particlesContainer');
-    const particleCount = 25;
+    if (!container) return;
+
+    container.replaceChildren();
+    const symbols = ['♪', '♫', '♬', '♩'];
+    const particleCount = 13;
 
     for (let i = 0; i < particleCount; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle note';
-        particle.textContent = ['♪', '♫', '♬', '♩', '♭', '♯'][Math.floor(Math.random() * 6)];
-
-        particle.style.left = Math.random() * 100 + '%';
-        particle.style.animationDelay = Math.random() * 20 + 's';
-        particle.style.fontSize = (Math.random() * 24 + 16) + 'px';
-
-        container.appendChild(particle);
+        const note = document.createElement('span');
+        note.className = 'particle note';
+        note.textContent = symbols[i % symbols.length];
+        note.style.left = `${5 + Math.random() * 90}%`;
+        note.style.fontSize = `${17 + Math.random() * 15}px`;
+        note.style.setProperty('--note-duration', `${15 + Math.random() * 9}s`);
+        note.style.setProperty('--note-delay', `${-Math.random() * 22}s`);
+        note.style.setProperty('--note-drift', `${-24 + Math.random() * 48}px`);
+        note.style.setProperty('--note-opacity', `${0.16 + Math.random() * 0.17}`);
+        container.appendChild(note);
     }
 }
 
@@ -162,6 +167,9 @@ function hideLoadingScreen() {
 // ===== RENDER TRACKS =====
 function renderTracks() {
     const container = document.getElementById('tracksContainer');
+    // The track list now lives on bonus.html, so the homepage has no tracksContainer.
+    // Exit safely on pages that do not render the bonus-track list.
+    if (!container) return;
     container.innerHTML = '';
 
     tracks.forEach((track, index) => {
@@ -286,16 +294,24 @@ let instaAudioPlaying = false;
 
 function toggleInstaAudio() {
     const btn = document.getElementById('instaMuteBtn');
+    const miniBtn = document.getElementById('miniPlayerToggle');
+    const status = document.getElementById('miniPlayerStatus');
     if (instaAudioPlaying) {
         instaAudio.pause();
         instaAudioPlaying = false;
-        btn.textContent = '🔇';
+        if (btn) btn.textContent = '🔇';
+        if (miniBtn) miniBtn.textContent = '▶';
+        if (status) status.textContent = 'Paused';
     } else {
-        instaAudio.play().catch(() => {
-            // Autoplay may be blocked by browser; still allow manual unmute.
+        instaAudio.play().then(() => {
+            instaAudioPlaying = true;
+            if (btn) btn.textContent = '🔊';
+            if (miniBtn) miniBtn.textContent = 'Ⅱ';
+            if (status) status.textContent = 'Playing';
+        }).catch(() => {
+            instaAudioPlaying = false;
+            if (status) status.textContent = 'Tap to play';
         });
-        instaAudioPlaying = true;
-        btn.textContent = '🔊';
     }
 }
 

@@ -3,21 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Unreleased Playlist: Pulihora Kalapadam Ela?</title>
+    <title>Unreleased Playlist: Memories to be remembered</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <nav class="site-nav">
-        <a class="nav-link active" href="index.html">Home</a>
-        <a class="nav-link" href="pages/gallery.html">Gallery</a>
-        <a class="nav-link" href="pages/movies.html">Movies</a>
-    </nav>
-
-    <!-- FLOATING PARTICLES -->
-    <div class="particles-container" id="particlesContainer"></div>
+    <aside class="spotify-sidebar">
+  <a class="brand-mark" href="index.html"><span class="brand-disc">◉</span><span>UNRELEASED</span></a>
+  <nav class="sidebar-nav" aria-label="Main navigation">
+    <a class="sidebar-link active" href="index.html"><span>⌂</span>Home</a>
+    <a class="sidebar-link" href="pages/movies.html"><span>▣</span>Movies & Series</a>
+    <a class="sidebar-link" href="pages/gallery.html"><span>▧</span>Gallery</a>
+    <a class="sidebar-link" href="bonus.html"><span>♫</span>Bonus Tracks</a>
+  </nav>
+  <div class="sidebar-bottom"><span class="sidebar-dot"></span> A collection in progress</div>
+</aside>
 
     <!-- LOADING SCREEN -->
     <div class="loading-screen" id="loadingScreen">
@@ -39,42 +41,25 @@
 
     <!-- HERO SECTION -->
     <div class="hero-section">
+        <div class="particles-container hero-particles" id="particlesContainer" aria-hidden="true"></div>
         <div class="hero-content">
             <div class="album-cover-container">
-                <div class="album-cover" style="background-image: url('assets/images/gallery/Screenshot 2026-01-12 020944 - Copy.png'); background-size: cover; background-position: center;"></div>
+                <div class="album-cover" role="img" aria-label="Featured playlist cover" style="background-image: url('assets/images/gallery/Screenshot 2026-01-12 020944 - Copy.png'); background-size: cover; background-position: center;"></div>
             </div>
             <div class="playlist-badge">Playlist</div>
-            <h1 class="hero-title">Unreleased Playlist: Pulihora Kalapadam Ela?</h1>
-            <p class="hero-subtitle">Lines that were said casually, remembered carefully.</p>
+            <h1 class="hero-title">Unreleased Playlist: Memories to be remembered</h1>
             <div class="hero-meta">
-                <span>12 songs</span>
+                <span>A collection in progress</span>
                 <span>•</span>
-                <span>Documented & Preserved ~ ft Shruthi dabba</span>
+                <span>Posts · Music · Movies · Memories</span>
             </div>
         </div>
     </div>
 
     <!-- MAIN CONTENT -->
     <div class="main-container">
-        <!-- CONTROLS -->
-        <div class="playlist-controls">
-            <button class="play-btn-large" onclick="playPlaylist()">▶</button>
-            <button class="more-options">⋯</button>
-        </div>
-
-        <!-- TRACK LIST -->
-        <div class="tracks-section">
-            <div class="tracks-header">
-                <div>#</div>
-                <div>Track Name</div>
-                <div>Preview</div>
-                <div>Duration</div>
-            </div>
-            <div id="tracksContainer"></div>
-        </div>
-
-        <!-- INSTAGRAM POST CAROUSEL -->
-        <div class="instagram-post-section">
+<section class="dashboard-section instagram-post-section">
+            <div class="section-heading"><div><p class="eyebrow">FEATURED</p><h2>Featured Post</h2></div></div>
             <div class="instagram-post-container">
                 <!-- Image Carousel -->
                 <div class="post-image-wrapper">
@@ -155,39 +140,37 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- BLEND LINK -->
-        <div class="blend-section">
-            <div class="blend-card">
-                <div class="blend-content">
-                    <h3 class="blend-title">Spotify Blend</h3>
-                    <button class="blend-button" onclick="openBlend()">
-                        <span class="blend-text">Click here for blend</span>
-                        <span class="blend-arrow">→</span>
-                    </button>
-                </div>
-                <div class="blend-decoration">
-                    <div class="music-pulse">🎵</div>
-                </div>
+        <section class="dashboard-section on-repeat-section">
+            <div class="section-heading"><div><p class="eyebrow">YOUR MUSIC</p><h2>On Repeat</h2></div></div>
+            <div class="repeat-grid">
+                <a class="repeat-card blend-repeat" href="#" onclick="openBlend(); return false;">
+                    <div class="repeat-art blend-art"><span>♫</span></div>
+                    <div class="repeat-copy"><strong>Spotify Blend</strong><small>Shared listening, in one place</small></div>
+                    <span class="repeat-arrow">↗</span>
+                </a>
+                <a class="repeat-card covers-repeat" href="#" onclick="openInstagram(); return false;">
+                    <div class="repeat-art covers-art"><span>♪</span></div>
+                    <div class="repeat-copy"><strong>Roshini's Song Covers</strong><small>Listen on Instagram</small></div>
+                    <span class="repeat-arrow">↗</span>
+                </a>
             </div>
-        </div>
+        </section>
 
-        <!-- ROSHINI'S INSTAGRAM SONGS -->
-        <div class="blend-section">
-            <div class="blend-card">
-                <div class="blend-content">
-                    <h3 class="blend-title">Roshini's Song Covers</h3>
-                    <button class="blend-button" onclick="openInstagram()">
-                        <span class="blend-text">Visit Instagram</span>
-                        <span class="blend-arrow">→</span>
-                    </button>
-                </div>
-                <div class="blend-decoration">
-                    <div class="music-pulse">📸</div>
-                </div>
+        <section class="dashboard-section recently-section">
+            <div class="section-heading"><div><p class="eyebrow">COLLECTION NOTES</p><h2>Recently Added</h2></div></div>
+            <div class="recently-shelf">
+                <div class="recent-disc">✳</div>
+                <div><span class="recent-label">RANDOM MEMORY</span><p>I'll add when i remember hehe</p></div>
             </div>
-        </div>
+        </section>
+    </div>
+
+    <div class="mini-player">
+        <div class="mini-player-track"><span class="mini-player-art">♫</span><div><strong>Unreleased Playlist</strong><small>Background audio</small></div></div>
+        <div class="mini-player-controls"><button type="button" onclick="toggleInstaAudio()" aria-label="Play or pause background audio" id="miniPlayerToggle">▶</button><span id="miniPlayerStatus">Paused</span></div>
+        <div class="mini-player-volume">♫ <span>Audio</span></div>
     </div>
 
     <!-- MODAL FOR FULL TRACK VIEW -->
