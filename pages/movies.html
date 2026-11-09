@@ -10,176 +10,193 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
-    <nav class="site-nav">
-        <a class="nav-link" href="../index.html">Home</a>
-        <a class="nav-link" href="gallery.html">Gallery</a>
-        <a class="nav-link active" href="movies.html">Movies</a>
-    </nav>
-
+    <aside class="spotify-sidebar">
+  <a class="brand-mark" href="../index.html"><span class="brand-disc">◉</span><span>UNRELEASED</span></a>
+  <nav class="sidebar-nav" aria-label="Main navigation">
+    <a class="sidebar-link" href="../index.html"><span>⌂</span>Home</a>
+    <a class="sidebar-link active" href="movies.html"><span>▣</span>Movies & Series</a>
+    <a class="sidebar-link" href="gallery.html"><span>▧</span>Gallery</a>
+    <a class="sidebar-link" href="../bonus.html"><span>♫</span>Bonus Tracks</a>
+  </nav><div class="sidebar-bottom"><span class="sidebar-dot"></span> A collection in progress</div></aside>
     <main class="page-shell">
-        <h1 class="page-title">Movies</h1>
-
-        <section class="movies-grid" aria-label="Movies grid">
-            <!-- NOTE: Three requested titles are not present in assets/images/movies/ right now:
-                 "18 pages", "Sarvam maya", "Knight of seven kingdoms".
-                 They will render a placeholder to avoid broken images. -->
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/GOT.jpg" alt="GOT" loading="lazy">
-                </div>
-                <h3 class="movie-title">GOT</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/HOD.jpg" alt="HOD" loading="lazy">
-                </div>
-                <h3 class="movie-title">HOD</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Anand.jpg" alt="Anand" loading="lazy">
-                </div>
-                <h3 class="movie-title">Anand</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Godavari.png" alt="Godavari" loading="lazy">
-                </div>
-                <h3 class="movie-title">Godavari</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Akhanda%202.jpg" alt="Akhanda 2🙏" loading="lazy">
-                </div>
-                <h3 class="movie-title">Akhanda 2🙏</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img
-                        class="movie-image"
-                        alt="18 pages"
-                        loading="lazy"
-                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='800'%20height='600'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%231a1a1a'/%3E%3Ctext%20x='50%25'%20y='50%25'%20dominant-baseline='middle'%20text-anchor='middle'%20fill='%23b3b3b3'%20font-family='Poppins,%20sans-serif'%20font-size='28'%3E18%20pages%20missing%3C/text%3E%3C/svg%3E"
-                    >
-                </div>
-                <h3 class="movie-title">18 pages</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Sammohanam.jpg" alt="Sammohanam" loading="lazy">
-                </div>
-                <h3 class="movie-title">Sammohanam</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/A%20aa.jpg" alt="A aa" loading="lazy">
-                </div>
-                <h3 class="movie-title">A aa</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Jigris.jpg" alt="Jigris" loading="lazy">
-                </div>
-                <h3 class="movie-title">Jigris</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Dies%20irae.jpg" alt="Dies irae" loading="lazy">
-                </div>
-                <h3 class="movie-title">Dies irae</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img
-                        class="movie-image"
-                        alt="Sarvam maya"
-                        loading="lazy"
-                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='800'%20height='600'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%231a1a1a'/%3E%3Ctext%20x='50%25'%20y='50%25'%20dominant-baseline='middle'%20text-anchor='middle'%20fill='%23b3b3b3'%20font-family='Poppins,%20sans-serif'%20font-size='28'%3ESarvam%20maya%20missing%3C/text%3E%3C/svg%3E"
-                    >
-                </div>
-                <h3 class="movie-title">Sarvam maya</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Yeh%20jawani%20hai%20deewani.jpg" alt="Yeh jawani hai deewani" loading="lazy">
-                </div>
-                <h3 class="movie-title">Yeh jawani hai deewani</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/M%20S%20Dhoni.jpg" alt="M S Dhoni" loading="lazy">
-                </div>
-                <h3 class="movie-title">M S Dhoni</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Rajasaab.jpg" alt="Rajasaab" loading="lazy">
-                </div>
-                <h3 class="movie-title">Rajasaab</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/With%20love.jpg" alt="With love" loading="lazy">
-                </div>
-                <h3 class="movie-title">With love</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Weapons.jpg" alt="Weapons" loading="lazy">
-                </div>
-                <h3 class="movie-title">Weapons</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Premante.jpg" alt="Premante" loading="lazy">
-                </div>
-                <h3 class="movie-title">Premante</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Su%20from%20So.jpg" alt="Su from So" loading="lazy">
-                </div>
-                <h3 class="movie-title">Su from So</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img class="movie-image" src="../assets/images/movies/Agent%20Sai%20Srinivasa%20Athreya.jpg" alt="Agent Sai Srinivasa Athreya" loading="lazy">
-                </div>
-                <h3 class="movie-title">Agent Sai Srinivasa Athreya</h3>
-            </article>
-
-            <article class="movie-card">
-                <div class="movie-image-frame">
-                    <img
-                        class="movie-image"
-                        alt="Knight of seven kingdoms"
-                        loading="lazy"
-                        src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='800'%20height='600'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='%231a1a1a'/%3E%3Ctext%20x='50%25'%20y='50%25'%20dominant-baseline='middle'%20text-anchor='middle'%20fill='%23b3b3b3'%20font-family='Poppins,%20sans-serif'%20font-size='28'%3EKnight%20of%20seven%20kingdoms%20missing%3C/text%3E%3C/svg%3E"
-                    >
-                </div>
-                <h3 class="movie-title">Knight of seven kingdoms</h3>
-            </article>
+        <h1 class="page-title">Movies & Series</h1>
+        <p class="movies-intro">The ever growing watchlist. Scroll through the collection.</p>
+        <div class="movie-carousel-controls">
+            <span class="movie-count">34 titles</span>
+            <div class="movie-arrow-group">
+                <button class="movie-arrow" id="moviePrev" aria-label="Scroll movies left">‹</button>
+                <button class="movie-arrow" id="movieNext" aria-label="Scroll movies right">›</button>
+            </div>
+        </div>
+        <section class="movie-carousel" aria-label="Movies carousel">
+            <div class="movies-grid" id="moviesTrack">
+                <article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/GOT.jpg" alt="GOT" loading="lazy"></div>
+            <h3 class="movie-title">GOT</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/HOD.jpg" alt="HOD" loading="lazy"></div>
+            <h3 class="movie-title">HOD</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Anand.jpg" alt="Anand" loading="lazy"></div>
+            <h3 class="movie-title">Anand</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Godavari.jpg" alt="Godavari" loading="lazy"></div>
+            <h3 class="movie-title">Godavari</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Akhanda%202.jpg" alt="Akhanda 2🙏" loading="lazy"></div>
+            <h3 class="movie-title">Akhanda 2🙏</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/18 pages.jpg" alt="18 pages" loading="lazy"></div>
+            <h3 class="movie-title">18 pages</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Sammohanam.jpg" alt="Sammohanam" loading="lazy"></div>
+            <h3 class="movie-title">Sammohanam</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/A%20aa.jpg" alt="A aa" loading="lazy"></div>
+            <h3 class="movie-title">A aa</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Jigris.jpg" alt="Jigris" loading="lazy"></div>
+            <h3 class="movie-title">Jigris</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Dies%20irae.jpg" alt="Dies irae" loading="lazy"></div>
+            <h3 class="movie-title">Dies irae</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Sarvam maya.jpg" alt="Sarvam maya" loading="lazy"></div>
+            <h3 class="movie-title">Sarvam maya</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Yeh%20jawani%20hai%20deewani.jpg" alt="Yeh jawani hai deewani" loading="lazy"></div>
+            <h3 class="movie-title">Yeh jawani hai deewani</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/M%20S%20Dhoni.jpg" alt="M S Dhoni" loading="lazy"></div>
+            <h3 class="movie-title">M S Dhoni</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Rajasaab.jpg" alt="Rajasaab" loading="lazy"></div>
+            <h3 class="movie-title">Rajasaab</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/With%20love.jpg" alt="With love" loading="lazy"></div>
+            <h3 class="movie-title">With love</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Weapons.jpg" alt="Weapons" loading="lazy"></div>
+            <h3 class="movie-title">Weapons</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Premante.jpg" alt="Premante" loading="lazy"></div>
+            <h3 class="movie-title">Premante</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Su%20from%20So.jpg" alt="Su from So" loading="lazy"></div>
+            <h3 class="movie-title">Su from So</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"><img class="movie-image" src="../assets/images/movies/Agent%20Sai%20Srinivasa%20Athreya.jpg" alt="Agent Sai Srinivasa Athreya" loading="lazy"></div>
+            <h3 class="movie-title">Agent Sai Srinivasa Athreya</h3>
+        </article>
+<article class="movie-card">
+            <div class="movie-image-frame"></div>
+            <h3 class="movie-title">Knight of seven kingdoms</h3>
+        </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Dorothy.jpg" alt="Dorothy" loading="lazy" data-title="Dorothy">
+            </div>
+        <h3 class="movie-title">Dorothy</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Mandaadi.jpg" alt="Mandaadi" loading="lazy" data-title="Mandaadi">
+            </div>
+        <h3 class="movie-title">Mandaadi</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/27 Dresses.jpg" alt="27 Dresses" loading="lazy" data-title="27 Dresses">
+            </div>
+        <h3 class="movie-title">27 Dresses</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Voismails of Isabelle.jpg" alt="Voismails of Isabelle" loading="lazy" data-title="Voismails of Isabelle">
+            </div>
+        <h3 class="movie-title">Voismails of Isabelle</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Ee Nagaraniki Emaindi.jpg" alt="Ee Nagaraniki Emaindi" loading="lazy" data-title="Ee Nagaraniki Emaindi">
+            </div>
+        <h3 class="movie-title">Ee Nagaraniki Emaindi</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Project Hail Mary.jpg" alt="Project Hail Mary" loading="lazy" data-title="Project Hail Mary">
+            </div>
+        <h3 class="movie-title">Project Hail Mary</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Alaipayuthey.jpg" alt="Alaipayuthey" loading="lazy" data-title="Alaipayuthey">
+            </div>
+        <h3 class="movie-title">Alaipayuthey</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Yevade Subramanyam.jpg" alt="Yevade Subramanyam" loading="lazy" data-title="Yevade Subramanyam">
+            </div>
+        <h3 class="movie-title">Yevade Subramanyam</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Rao Bahadur.jpg" alt="Rao Bahadur" loading="lazy" data-title="Rao Bahadur">
+            </div>
+        <h3 class="movie-title">Rao Bahadur</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Jetlee.jpg" alt="Jetlee" loading="lazy" data-title="Jetlee">
+            </div>
+        <h3 class="movie-title">Jetlee</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Vaazha.jpg" alt="Vaazha" loading="lazy" data-title="Vaazha">
+            </div>
+        <h3 class="movie-title">Vaazha</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Gladiator.jpg" alt="Gladiator" loading="lazy" data-title="Gladiator">
+            </div>
+        <h3 class="movie-title">Gladiator</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Brochevarevarura.jpg" alt="Brochevarevarura" loading="lazy" data-title="Brochevarevarura">
+            </div>
+        <h3 class="movie-title">Brochevarevarura</h3>
+    </article>
+<article class="movie-card">
+        <div class="movie-image-frame">
+                <img class="movie-image poster-to-add" src="../assets/images/movies/Malli Raava.jpg" alt="Malli Raava" loading="lazy" data-title="Malli Raava">
+            </div>
+        <h3 class="movie-title">Malli Raava</h3>
+    </article>
+            </div>
         </section>
     </main>
+    <script src="../js/movies.js"></script>
 </body>
 </html>
-
